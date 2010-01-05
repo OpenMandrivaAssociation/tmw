@@ -18,6 +18,9 @@ BuildRequires:	guichan-devel
 BuildRequires:	libxml2-devel
 BuildRequires:	libpng-devel
 
+Provides:	themanaworld
+Provides:	manaworld
+
 %description
 The Mana World (TMW) is a serious effort to create an innovative free 
 and open source MMORPG. TMW uses 2D graphics and aims to create a large 

@@ -1,6 +1,6 @@
 Name:		tmw
 Version:	0.0.29.1
-Release:	%mkrel 1
+Release:	%mkrel 2
 Summary:	A 2D MMORPG : The Mana World
 Group:		Games/Other
 License:	GPLv2+
@@ -18,6 +18,7 @@ BuildRequires:	guichan-devel
 BuildRequires:	libxml2-devel
 BuildRequires:	libpng-devel
 
+Suggests:	tmwmusic
 Provides:	themanaworld
 Provides:	manaworld
 
@@ -30,12 +31,21 @@ and diverse interactive world.
 %setup -q
 
 %build
-%configure --disable-rpath
+%configure	--bindir=%{_gamesbindir} \
+		--datadir=%{_gamesdatadir} \
+		--disable-rpath
 %make
 
 %install
 rm -rf %{buildroot}
 %makeinstall_std
+
+mkdir -p %{buildroot}%{_datadir}/{pixmaps,applications}
+mv %{buildroot}%{_gamesdatadir}/pixmaps/%{name}.png \
+	%{buildroot}%{_datadir}/pixmaps/
+mv %{buildroot}%{_gamesdatadir}/applications/%{name}.desktop \
+        %{buildroot}%{_datadir}/applications/
+rm -rf %{buildroot}%{_gamesdatadir}/{pixmaps,applications}
 
 %find_lang %{name}
 
@@ -45,8 +55,8 @@ rm -rf %{buildroot}
 %files -f %{name}.lang
 %defattr(-,root,root,-)
 %doc AUTHORS ChangeLog COPYING docs/*.txt NEWS README
-%{_bindir}/%{name}
-%{_datadir}/%{name}
+%{_gamesbindir}/%{name}
+%{_gamesdatadir}/%{name}
 %{_datadir}/pixmaps/%{name}.png
 %{_datadir}/applications/%{name}.desktop
 %{_mandir}/man6/%{name}*

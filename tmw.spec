@@ -1,6 +1,6 @@
 Name:		tmw
 Version:	0.0.29.1
-Release:	%mkrel 2
+Release:	%mkrel 3
 Summary:	A 2D MMORPG : The Mana World
 Group:		Games/Other
 License:	GPLv2+
@@ -19,8 +19,8 @@ BuildRequires:	libxml2-devel
 BuildRequires:	libpng-devel
 
 Suggests:	tmwmusic
-Provides:	themanaworld
-Provides:	manaworld
+Provides:	themanaworld = %{version}-%{release}
+Provides:	manaworld = %{version}-%{release}
 
 %description
 The Mana World (TMW) is a serious effort to create an innovative free 

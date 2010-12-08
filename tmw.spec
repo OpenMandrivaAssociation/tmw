@@ -1,6 +1,6 @@
 Name:		tmw
 Version:	0.0.29.1
-Release:	%mkrel 3
+Release:	%mkrel 4
 Summary:	A 2D MMORPG : The Mana World
 Group:		Games/Other
 License:	GPLv2+

@@ -4,7 +4,7 @@ Release:	%mkrel 4
 Summary:	A 2D MMORPG : The Mana World
 Group:		Games/Other
 License:	GPLv2+
-Url:		http://themanaworld.org/
+Url:		https://themanaworld.org/
 Source0:	http://downloads.sourceforge.net/themanaworld/%{name}-%{version}.tar.gz
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 

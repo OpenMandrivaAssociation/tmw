@@ -8,6 +8,11 @@ Url:		https://themanaworld.org/
 Source0:	http://downloads.sourceforge.net/themanaworld/%{name}-%{version}.tar.gz
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	SDL-devel
 BuildRequires:	SDL_mixer-devel
 Buildrequires:	SDL_net-devel
